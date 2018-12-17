@@ -1,4 +1,4 @@
-# Tic Tac Toe game in Python
+                    # Tic Tac Toe game in Python
 
 # This line is to create the board to store the X & O for the game.
 # start with ' ' to give a leading space. 
@@ -38,7 +38,23 @@ def isWinner (bo, le):  # bo stands for Board
 
 
 def playerMove ():
-    pass
+    run = True
+    while run:
+        move = input ('Please select a position to place an \'X\' (1-9):')
+        try:
+            move = int(move)
+            if move > 0 and move < 10:  # to make sure user has inout between 1 & 9
+                if spaceIsFree (move):
+                    run = False
+                    insertLetter ('X', move)
+                else:
+                    print ('Sorry this space is occupied!')
+            else:
+                print ('Please type a number within the range!')
+
+        except:
+            print('Please type a number! ') # in case user does not type an iteger
+
 
 def compMove ():
     pass
@@ -47,7 +63,11 @@ def selectRandom (board):
     pass
 
 def isBoardFull (board):
-    pass
+    if board.count (' ') > 1:
+        return True
+    else
+        return False
+
 
 def main ():
     print (' Welcome to Tic Tac Toe game')
@@ -58,14 +78,14 @@ def main ():
             playerMove () 
             printBoard ()
         else:
-            print ("sorry, \O's won this round!")
+            print ("sorry, O\'s won this round!")
             break
 
-        if not (isWinner (board, 'O') ): # check if the computer is the winner
-            playerMove () 
+        if not (isWinner (board, 'X') ): # check if the computer is the winner
+            compMove () 
             printBoard ()
         else:
-            print ("sorry, \O's won this round!")
+            print (" X\'s won this round! Great Job!")
             break
 
     if isBoardFull (board):
