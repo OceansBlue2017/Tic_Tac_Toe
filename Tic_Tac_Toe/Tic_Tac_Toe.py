@@ -36,3 +36,40 @@ def isWinner (bo, le):  # bo stands for Board
            (bo [1] == le and bo[5] == le and bo[9] == le) or
            (bo [3] == le and bo[5] == le and bo[7] == le) 
 
+
+def playerMove ():
+    pass
+
+def compMove ():
+    pass
+
+def selectRandom (board):
+    pass
+
+def isBoardFull (board):
+    pass
+
+def main ():
+    print (' Welcome to Tic Tac Toe game')
+    prntBoard ()
+
+    while not (isBaordFull (board) ): # if the board is full tie the game, no need to continue
+        if not (isWinner (board, 'O') ): # check if the computer is the winner
+            playerMove () 
+            printBoard ()
+        else:
+            print ("sorry, \O's won this round!")
+            break
+
+        if not (isWinner (board, 'O') ): # check if the computer is the winner
+            playerMove () 
+            printBoard ()
+        else:
+            print ("sorry, \O's won this round!")
+            break
+
+    if isBoardFull (board):
+        print ('Tie Game!')
+
+
+main ()
