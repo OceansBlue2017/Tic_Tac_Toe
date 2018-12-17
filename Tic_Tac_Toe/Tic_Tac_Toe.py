@@ -53,7 +53,7 @@ def playerMove ():
                 print ('Please type a number within the range!')
 
         except:
-            print('Please type a number! ') # in case user does not type an iteger
+            print('Please type a number! ') # in case user does not type an integer
 
 
 def compMove ():
