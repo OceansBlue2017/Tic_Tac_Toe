@@ -49,7 +49,7 @@ def playerMove ():
 
 
 def compMove ():
-    possibleMoves = [x for x, letter in enumerate (board) if letter == ' ' andx !=0] 
+    possibleMoves = [x for x, letter in enumerate (board) if letter == ' ' and x !=0] 
     move = 0
 
     for let in ['O', 'X']:
@@ -67,11 +67,12 @@ for i in possibleMoves:
 
 if len(cornersOpen) > 0:
     move = selectRandom (cornersOpen)
-    return move
+
+return move
 
 if 5 in possibleMoves:
     move = 5
-    return move
+return move
 
 edgesOpen = []
 for i in possibleMoves:
@@ -98,19 +99,19 @@ def selectRandom (li):
 
 def isBoardFull (board):
     if board.count (' ') > 1:
-        return True
-    else
         return False
+    else:
+        return True
 
 
 def main ():
     print (' Welcome to Tic Tac Toe game')
-    prntBoard ()
+    printBoard (board)
 
     while not (isBaordFull (board) ): # if the board is full tie the game, no need to continue
         if not (isWinner (board, 'O') ): # check if the computer is the winner
             playerMove () 
-            printBoard ()
+            printBoard (board)
         else:
             print ("sorry, O\'s won this round!")
             break
