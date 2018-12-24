@@ -75,11 +75,11 @@ if 5 in possibleMoves:
 
 edgesOpen = []
 for i in possibleMoves:
-     if i in [2, 4, 6, 8]:
-        edgesOpen.append(i)
+    if i in [2, 4, 6, 8]:
+       edgesOpen.append(i)
 
 if len(edgesOpen) > 0:
-    move = selectRandom (edgesOpen)
+   move = selectRandom (edgesOpen)
 
 return move
 
