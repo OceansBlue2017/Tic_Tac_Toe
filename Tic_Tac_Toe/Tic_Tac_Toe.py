@@ -60,19 +60,18 @@ def compMove ():
                mover = i
                return move
 
-cornersOpen = []
+cornersOpen = []                     # Tic Tac Toe (Part 2) @ min 10:30
 for i in possibleMoves:
-     if i in [1, 3, 7, 9]:
-        cornersopen.append(i)
+    if i in [1, 3, 7, 9]:
+       cornersopen.append(i)
 
 if len(cornersOpen) > 0:
-    move = selectRandom (cornersOpen)
-
-return move
+   move = selectRandom (cornersOpen)
+   return move
 
 if 5 in possibleMoves:
     move = 5
-return move
+    return move
 
 edgesOpen = []
 for i in possibleMoves:
@@ -119,10 +118,11 @@ def main ():
         if not (isWinner (board, 'X') ): # check if the computer is the winner
             move = compMove () 
             if move == 0:
-                printBoard ('Tie Game!')
+               printBoard ('Tie Game!')   # @ min 1:36 https://www.youtube.com/watch?v=jAaJZLqryTI
             else:
                 insertLetter('O', board)
                 print ('Computer placed an \'O\' in position', move , ':')
+                printBoard(board)
         else:
             print (" X\'s won this round! Great Job!")
             break
